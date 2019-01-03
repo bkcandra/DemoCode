@@ -1,0 +1,101 @@
+﻿
+
+.ntj_container {
+    width: 225px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ntj_wrapper-header a {
+    color: #fff;
+    font-weight: 400;
+    text-decoration: inherit;
+}
+
+.ntj_wrapper-header {
+    background-color: #8935c0;
+    border-radius: 4px 4px 0 0;
+    padding: 12px 14px;
+}
+
+.ntj_filters {
+    background-color: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+}
+
+.ntj_filter-item {
+    background-color: transparent;
+    border: 1px solid #65309c;
+    border-radius: 3px;
+    color: #65309c;
+    flex: 1;
+    height: 36px;
+    margin-right: 5px;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+.ntj_filter-item--is-active, .ntj_filter-item--is-active:hover {
+    background-color: #8935c0;
+    color: #fff;
+}
+
+.ntj_filter-item:hover {
+    background-color: #ebedf5;
+}
+
+
+
+.ntj_event {
+    border-top: 1px solid #ebedf5;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+.ntj_event-container {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.ntj__events-list {
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ntj_eventImage {
+    align-items: center;
+    display: flex;
+    height: 32px;
+    width: 32px;
+}
+
+.ntj_eventContent_container {
+    align-items: center;
+    display: flex;
+    padding: 0 5px;
+    width: 100%;
+}
+
+.ntj_eventContent_race {
+    color: #ababab;
+    font-weight: 400;
+}
+
+.ntj_eventTimer {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.countdown.countdown-imminent, .countdown.countdown-past {
+    color: #ff4b3d;
+}

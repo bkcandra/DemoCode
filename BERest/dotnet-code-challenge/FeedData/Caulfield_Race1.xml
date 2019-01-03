@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<meeting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <date>16/12/2017</date>
+  <MeetingType>HorseRacing</MeetingType>
+  <track name="Caulfield" TranslatedName="Caulfield" club="Melbourne R.C." location="M" country="AUS" state="VIC" condition="Good3"/>
+  <Meetingid>92217</Meetingid>
+  <races>
+    <race number="1" name="Evergreen Turf Plate" id="1536514" Status="OPEN">
+      <NumberOfRunners>13</NumberOfRunners>
+      <start_time>16/12/2017 11:30:00 AM</start_time>
+      <distance metres="1100"/>
+      <horses>
+        <horse name="Advancing" country="AUS" age="2" sex="C" colour="b" foaling_date="01/08/2015" id="872699">
+          <number>1</number>
+          <trainer name="M G Price" id="3495">
+            <statistics>
+              <statistic type="one_year" total="738" firsts="113" seconds="93" thirds="92"/>
+            </statistics>
+          </trainer>
+          <training_location>Caulfield</training_location>
+          <owners>Newgate S F (Mgr: G D Murphy), China Horse Club Racing Pty Ltd (Mgr: A K Teo), Horse Ventures (Mgr: M B Sandblom) &amp;amp; Winstar Farm Llc (Mgr: J Mullikin)</owners>
+          <colours>Red, Yellow Stars And Halved Sleeves, Red Cap With White Newgate Logo</colours>
+          <current_blinker_ind>N</current_blinker_ind>
+          <prizemoney_won>0</prizemoney_won>
+          <jockey name="M J Dee" id="15233">
+            <statistics>
+              <statistic type="one_year" total="717" firsts="71" seconds="64" thirds="80"/>
+            </statistics>
+          </jockey>
+          <barrier>7</barrier>
+          <weight allocated="57" total="57"/>
+        </horse>
+        <horse name="Coronel" country="AUS" age="2" sex="C" colour="b" foaling_date="22/08/2015" id="872442">
+          <number>2</number>
+          <trainer name="Nick Ryan" id="26371">
+            <statistics>
+              <statistic type="one_year" total="66" firsts="7" seconds="10" thirds="11"/>
+            </statistics>
+          </trainer>
+          <training_location>Caulfield</training_location>
+          <owners>Crown Park (Mgr: R N Douglas) &amp;amp; T Davies</owners>
+          <colours>Royal Blue, Light Blue Hoops, White Cap</colours>
+          <current_blinker_ind>Y</current_blinker_ind>
+          <prizemoney_won>3000</prizemoney_won>
+          <last_four_starts>05</last_four_starts>
+          <last_ten_starts>05</last_ten_starts>
+          <jockey name="Ryan Maloney" id="12986">
+            <statistics>
+              <statistic type="one_year" total="488" firsts="70" seconds="61" thirds="74"/>
+            </statistics>
+          </jockey>
+          <barrier>6</barrier>
+          <weight allocated="57" total="57"/>
+        </horse>
+      </horses>
+      <prices>
+        <price>
+          <priceType>WinFixedOdds</priceType>
+          <horses>
+            <horse number="1" Price="4.2"/>
+            <horse number="2" Price="12"/>
+          </horses>
+        </price>
+      </prices>
+    </race>
+  </races>
+</meeting>

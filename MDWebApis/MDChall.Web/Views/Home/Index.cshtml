@@ -1,0 +1,146 @@
+﻿@model Dictionary<string,List<String>>
+@using MDChall.Core
+@using MDChall.Web.Helpers
+@{
+    ViewData["Title"] = "Home Page";
+    var Gender = new SelectList(new SystemConstants.Gender().ToIEnum(), "Value", "Text");
+}
+@section Scripts{
+    @*
+        In Production step is taken to separate and minifying scripts
+    *@
+    <script>
+        $('#btnExport').click(function () {
+            var q = $("#txtSearch").val();
+            var uri ='@Url.Action("Export", "Home")';
+            $('#iframe').attr('src', uri +"?query="+q);
+            $('#iframe').load();
+        });
+
+        $("#btnUpload").click(function () {
+            var _url = '@Url.Action("UploadAndProcess", "Home")';
+
+            var formData = new FormData();
+            var file = document.getElementById("FileUpload").files[0];
+            formData.append("file", file);
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("UploadAndProcess")',
+                data: formData,
+                contentType: false,
+                processData: false,
+                datatype:'json',
+                success: function (response) {
+                        $('#NPLBody').empty();
+                        $('#NPLBody').append(response);
+                },
+                error: function (error) {
+                    alert(error.responseJSON.message);
+                }
+            });
+        });
+
+        $("#txtSearch").change(function () {
+                $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Search")',
+                data: { query: $(this).val() },
+                success: function (response) {
+                    $('#NPLBody').empty();
+                    $('#NPLBody').append(response);
+                }
+            });
+        });
+
+        $("#btnSubmit").click(function () {
+            var _url = '@Url.Action("AddRecord", "Home")';
+
+            $.ajax({
+                type: 'POST',
+                url: _url,
+                data: $("#frmRecord").serialize(),
+                datatype:'json',
+                success: function (response) {
+                    $('#addRecord').modal('hide');
+                        $('#NPLBody').empty();
+                        $('#NPLBody').append(response);
+
+                },
+                error: function (error) {
+                    alert(error.responseJSON.message);
+                }
+            });
+        });
+    </script>
+}
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input id="FileUpload" type="file" class="form-control" />
+            <span class="input-group-btn">
+                <button id="btnUpload" type="button" class="btn btn-default">Process</button>
+            </span>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input id=txtSearch type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button id="btnExport" type="button" class="btn btn-default">Export</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" style="margin-top:25px">
+    <div class="panel-heading clearfix">
+        <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Passengers Name List</h4>
+
+        <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#addRecord">Add Record</button>
+
+    </div>
+    <div id="NPLBody" class="panel-body">
+        @await Html.PartialAsync("~/Views/Shared/_PartialPassengerList.cshtml", Model);
+    </div>
+</div>
+<div class="modal inmodal" id="addRecord" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-newspaper-o modal-icon"></i>
+                <h4 class="modal-title">Add new Summary</h4>
+
+            </div>
+            <form id="frmRecord" asp-action="addRecord">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label class="label-control">Key</label>
+                        <input type="text" name="Key" maxlength="6" class="form-control" placeholder="ex : ABCDEF" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-control">Gender</label>
+                        <select id="ExtraType" name="Gender" asp-items="Gender" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-control">First Name</label>
+                        <input type="text" name="FirstName" class="form-control" placeholder="John " />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-control">Last Name</label>
+                        <input type="text" name="LastName" class="form-control" placeholder="Doe" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button id="btnSubmit" type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<iframe id="iframe" style="display:none;"></iframe>

@@ -1,0 +1,33 @@
+﻿@model BetEasy.Core.Models.RaceDataResponse;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="bs-example">
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Race List</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.HorsePrice)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Price</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

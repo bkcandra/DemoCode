@@ -1,0 +1,110 @@
+﻿a {
+    color: #2a6496;
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+    a:focus, a:hover {
+        color: #2a6496;
+    }
+
+body {
+    background-color: #eef0f4;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1320px;
+}
+
+.content {
+    background: #fff;
+}
+
+
+/* 1. Header*/
+.navbar-default {
+    background: #fff;
+    border-bottom: 1px solid #c9c9c9;
+    height: 80px;
+    width: 100%;
+}
+
+
+    .navbar-default > navbar-header {
+        order: 1;
+        align-content: center;
+        color: #8935c0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+ul.navbar-nav {
+    color: #232539;
+    display: flex;
+    flex: 1;
+}
+
+
+    ul.navbar-nav > li {
+        border-left: 1px solid #c9c9c9;
+        display: -ms-flexbox;
+        display: flex;
+        flex: 0 1 108px;
+        flex-direction: column;
+        font-weight: 500;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+        ul.navbar-nav > li > a {
+            font-color: #243b7f;
+            font-weight: bold;
+        }
+
+.nav_glyph {
+    line-height: 0;
+    margin-bottom: 5px;
+}
+
+    .nav_glyph .cb-icon img {
+        height: 27px;
+        width: 27px;
+    }
+
+.cb-icon img {
+    position: relative;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+
+/* End Header*/
+/* 2 Images*/
+.button, .img {
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.img-harness {
+    background-image: url('../images/harness.PNG');
+}
+
+.img-greyhound {
+    background-image: url('../images/greyhound.PNG');
+}
+
+.img-horserace {
+    background-image: url('../images/horserace.PNG');
+}
+
+/* End Images*/

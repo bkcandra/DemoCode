@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Challenge.Models.GroupedPets>
+@using Challenge.Core.Constants
+@using Challenge.Web.Helpers
+@{
+    ViewData["Title"] = "List";
+    var PetsFilter = new SelectList(new SystemConstants.PetsFilter().ToIEnum(), "Value", "Text");
+    var PetsSorting = new SelectList(new SystemConstants.PetsSorting().ToIEnum(), "Value", "Text");
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Panel title</h3>
+    </div>
+    <div class="panel-body">
+
+        <form method="get" asp-action="Index">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <select name="filter" asp-items="PetsFilter" class="form-control">
+                            <option value="">Show All</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select name="sorting" asp-items="PetsSorting" class="form-control"></select>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-primary" type="submit">Go</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="col-md-6">
+            @foreach (var records in Model)
+            {
+                <h3>@records.Heading</h3>
+                    <ul>
+                        @foreach (var pet in records.Records)
+                        {
+                            <li>
+                                @String.Format("{0} ({1})", pet.Name, pet.Type)
+                            </li>
+                        }
+                    </ul>
+            }
+        </div>
+    </div>
+</div>
+
+

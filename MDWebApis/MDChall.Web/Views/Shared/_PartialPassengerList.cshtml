@@ -1,0 +1,32 @@
+﻿@model Dictionary<string,List<String>>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Key
+            </th>
+            <th>
+                Passengers
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model)
+        {
+            var rec = 1;
+            foreach (var p in record.Value)
+            {
+                <tr class="list index-@record.Key" id="row-@rec">
+                    <td>
+                        <label class="rLocator">@(rec == 1 ? record.Key : "")</label>
+                    </td>
+                    <td>
+                        <label class="pNames" data-key="@record.Key">@p</label>
+                    </td>
+                </tr>
+                rec++;
+            }
+        }
+    </tbody>
+</table>

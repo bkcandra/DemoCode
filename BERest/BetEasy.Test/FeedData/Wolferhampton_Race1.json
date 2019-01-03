@@ -1,0 +1,70 @@
+{
+  "FixtureId": "bphVf_Ik6LkkxYT5aN1MgQvcta0",
+  "Timestamp": "2017-12-13T06:05:23Z",
+  "RawData": {
+    "FixtureName": "13:45 @ Wolverhampton",
+    "Id": "bphVf_Ik6LkkxYT5aN1MgQvcta0",
+    "StartTime": "2017-12-13T13:45:00Z",
+    "Sequence": 1,
+    "Tags": {
+      "CourseType": "Flat",
+      "Distance": "0m 5f 21y",
+      "Going": "Fast",
+      "Runners": "9",
+      "MeetingCode": "94209",
+      "TrackCode": "Wolverhampton",
+      "Sport": "HorseRacing"
+    },
+    "Markets": [
+      {
+        "Id": "NbSeMfzhDCHT_HdtAYZF_7zjFkI",
+        "Selections": [
+          {
+            "Id": "b0Ut0-KyBdfknmjckAQHY1sxs3U",
+            "Price": 10.0,
+            "Tags": {
+              "participant": "1",
+              "name": "Toolatetodelegate"
+            }
+          },
+          {
+            "Id": "2GQLldt5t2lZCW93EgdBMwDIbP0",
+            "Price": 4.4,
+            "Tags": {
+              "participant": "2",
+              "name": "Fikhaar"
+            }
+          }
+        ],
+        "Tags": {
+          "Places": "3",
+          "type": "winner"
+        }
+      }
+    ],
+    "Participants": [
+      {
+        "Id": 1,
+        "Name": "Toolatetodelegate",
+        "Tags": {
+          "Weight": "9st 7lbs",
+          "Drawn": "8",
+          "Jockey": "William Carver",
+          "Number": "1",
+          "Trainer": "B Barr"
+        }
+      },
+      {
+        "Id": 2,
+        "Name": "Fikhaar",
+        "Tags": {
+          "Weight": "9st 6lbs",
+          "Drawn": "3",
+          "Jockey": "T Eaves",
+          "Number": "2",
+          "Trainer": "K A Ryan"
+        }
+      }
+    ]
+  }
+}

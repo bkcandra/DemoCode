@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Challenge.Models.GroupedPets>
+@using System.Linq
+
+<div class="col-md-6">
+    @foreach (var records in Model)
+    {
+        <h3>@records.Heading</h3>
+        <ul>
+            @foreach (var pet in records.Records)
+            {
+                <li>
+                    @String.Format("{0} ({1})", pet.Name, pet.Type)
+                </li>
+            }
+        </ul>
+    }
+</div>

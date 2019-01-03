@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Challenge.Models.GroupedPeople>
+@using System.Linq
+
+<div class="col-md-6">
+    @foreach (var records in Model)
+    {
+        <h3>@records.Heading</h3>            <ul>
+            @foreach (var person in records.Records)
+            {
+                <li>
+                    @String.Format("{0} ({1}, {2} Years old)", person.Name, person.Gender, person.Age)
+                    @if (person.Pets != null &&  person.Pets.Any())
+                    {
+                        <ul>
+                            @foreach (var pet in person.Pets)
+                            {
+                                <li>
+                                    @String.Format("{0} ({1})", pet.Name, pet.Type)
+                                </li>
+                            }
+
+                        </ul>
+                    }
+
+                </li>
+            }
+        </ul>
+    }
+
+</div>

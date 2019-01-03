@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\FeedData\Caulfield_Race1.xml" />
+    <Content Remove="wwwroot\FeedData\Wolferhampton_Race1.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\FeedData\Caulfield_Race1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\FeedData\Wolferhampton_Race1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BetEasy.Common\BetEasy.Common.csproj" />
+    <ProjectReference Include="..\BetEasy.Core\BetEasy.Core.csproj" />
+    <ProjectReference Include="..\BetEasy.Framework\BetEasy.Framework.csproj" />
+  </ItemGroup>
+
+</Project>
